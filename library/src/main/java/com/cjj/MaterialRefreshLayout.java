@@ -58,6 +58,7 @@ public class MaterialRefreshLayout extends FrameLayout {
     private boolean isLoadMoreing;
     private boolean isLoadMore;
     private boolean isSunStyle = false;
+    private boolean enabledRefresh = true;
 
     public MaterialRefreshLayout(Context context) {
         this(context, null, 0);
@@ -195,7 +196,7 @@ public class MaterialRefreshLayout extends FrameLayout {
             case MotionEvent.ACTION_MOVE:
                 float currentY = ev.getY();
                 float dy = currentY - mTouchY;
-                if (dy > 0 && !canChildScrollUp()) {
+                if (dy > 0 && !canChildScrollUp() && enabledRefresh) {
                     if (mMaterialHeaderView != null) {
                         mMaterialHeaderView.setVisibility(View.VISIBLE);
                         mMaterialHeaderView.onBegin(this);
@@ -308,10 +309,7 @@ public class MaterialRefreshLayout extends FrameLayout {
                 return true;
         }
 
-        return super.
-
-                onTouchEvent(e);
-
+        return super.onTouchEvent(e);
     }
 
     public void setSunStyle(boolean isSunStyle) {
@@ -550,4 +548,7 @@ public class MaterialRefreshLayout extends FrameLayout {
         this.refreshListener = refreshListener;
     }
 
+    public void setEnabledRefresh(boolean enabledRefresh) {
+        this.enabledRefresh = enabledRefresh;
+    }
 }

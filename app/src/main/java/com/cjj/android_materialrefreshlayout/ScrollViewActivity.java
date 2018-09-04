@@ -18,7 +18,7 @@ public class ScrollViewActivity extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrollview);
 
-        materialRefreshLayout = (MaterialRefreshLayout) findViewById(R.id.refresh);
+        materialRefreshLayout = findViewById(R.id.refresh);
         materialRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
@@ -69,6 +69,10 @@ public class ScrollViewActivity extends BaseActivity implements View.OnClickList
 
             case R.id.overLay:
                 startActivity(new Intent(this,OverLayActivity.class));
+                break;
+
+            case R.id.coordinatorLayout:
+                startActivity(new Intent(this,NestingAppBarLayoutActivity.class));
                 break;
 
         }

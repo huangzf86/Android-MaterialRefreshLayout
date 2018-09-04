@@ -29,7 +29,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
@@ -42,7 +42,7 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(View view) {
-        rootLayout = (LinearLayout) findViewById(R.id.root_layout);
+        rootLayout = findViewById(R.id.root_layout);
         if (rootLayout == null) return;
         rootLayout.addView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         initToolbar();

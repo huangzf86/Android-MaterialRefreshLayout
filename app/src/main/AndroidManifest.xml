@@ -22,6 +22,7 @@
         <activity android:name=".WaveActivity"/>
         <activity android:name=".SunActivity"/>
         <activity android:name=".OverLayActivity"/>
+        <activity android:name=".NestingAppBarLayoutActivity"/>
     </application>
 
 </manifest>

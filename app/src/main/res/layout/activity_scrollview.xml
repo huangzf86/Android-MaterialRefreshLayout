@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.cjj.MaterialRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.cjj.MaterialRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/refresh"
     android:layout_width="match_parent"
@@ -12,8 +11,7 @@
     app:progress_show_circle_backgroud="true"
     app:wave_color="#60ff2020"
     app:wave_height_type="normal"
-    app:wave_show="true"
-    >
+    app:wave_show="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -96,6 +94,17 @@
                 android:text="overLay"
                 android:textColor="#fff"/>
 
+            <Button
+                android:id="@+id/coordinatorLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#ff2020"
+                android:onClick="onClick"
+                android:text="Nesting app bar layout"
+                android:textColor="#fff" />
 
         </LinearLayout>
     </ScrollView>

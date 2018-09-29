@@ -28,9 +28,6 @@ public class NestingAppBarLayoutActivity extends BaseActivity {
     private Handler handler;
 
     @Override
-
-
-
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinator_layout);
@@ -92,7 +89,7 @@ public class NestingAppBarLayoutActivity extends BaseActivity {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 Log.d(TAG, "onOffsetChanged() called with: appBarLayout = [" + appBarLayout + "], verticalOffset = [" + verticalOffset + "]");
-               //
+                //
                 refreshLayout.setEnabledRefresh(verticalOffset >= 0);
             }
         });

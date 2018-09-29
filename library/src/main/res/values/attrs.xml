@@ -30,6 +30,7 @@
             <enum name="normal" value="0"></enum>
             <enum name="big" value="1"></enum>
         </attr>
-        <attr name="isLoadMore" format="boolean"></attr>
+        <attr name="isRefresh" format="boolean"/>
+        <attr name="isLoadMore" format="boolean"/>
     </declare-styleable>
 </resources>

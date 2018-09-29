@@ -57,6 +57,7 @@ public class MaterialRefreshLayout extends FrameLayout {
     private int progressSize = 0;
     private boolean isLoadMoreing;
     private boolean isLoadMore;
+    private boolean isRefresh;
     private boolean isSunStyle = false;
     private boolean enabledRefresh = true;
 
@@ -119,6 +120,7 @@ public class MaterialRefreshLayout extends FrameLayout {
         } else {
             progressSize = BIG_PROGRESS_SIZE;
         }
+        isRefresh = t.getBoolean(R.styleable.MaterialRefreshLayout_isRefresh, true);
         isLoadMore = t.getBoolean(R.styleable.MaterialRefreshLayout_isLoadMore, false);
         t.recycle();
     }
@@ -196,7 +198,7 @@ public class MaterialRefreshLayout extends FrameLayout {
             case MotionEvent.ACTION_MOVE:
                 float currentY = ev.getY();
                 float dy = currentY - mTouchY;
-                if (dy > 0 && !canChildScrollUp() && enabledRefresh) {
+                if (dy > 0 && !canChildScrollUp() && enabledRefresh && isRefresh) {
                     if (mMaterialHeaderView != null) {
                         mMaterialHeaderView.setVisibility(View.VISIBLE);
                         mMaterialHeaderView.onBegin(this);
@@ -376,6 +378,14 @@ public class MaterialRefreshLayout extends FrameLayout {
             refreshListener.onRefresh(MaterialRefreshLayout.this);
         }
 
+    }
+
+    /**
+     * 设置能否刷新
+      * @param refresh
+     */
+    public void setRefresh(boolean refresh) {
+        isRefresh = refresh;
     }
 
     public void setLoadMore(boolean isLoadMore) {
